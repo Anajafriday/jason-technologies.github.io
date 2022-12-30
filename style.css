@@ -732,7 +732,7 @@ nav>ul>li>a:hover{
         .blog-layout{
             flex-direction: column;
             width:500%;
-            margin-left:70px;
+            margin-left:40px;
         }
         .post-body{
             text-align: justify;
