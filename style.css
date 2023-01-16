@@ -1,12 +1,15 @@
+*::before,*::after{
+    box-sizing: border-box;
+}
 body{
     padding: 0%;
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.5;
     font-family: 'Roboto Condensed', sans-serif;
 }
 html{
     scroll-behavior: smooth;
-    scroll-padding: 10%;
+    scroll-padding: 19%;
 }
 .site-title{
     text-align: center;
@@ -23,73 +26,131 @@ html{
     margin-left: auto;
     margin-right: auto;
 }
+/* ==========nav======= */
 
-
-label.logo{
-    margin-left: 20px;
-    zoom: 1.1;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    
-}
-label.logo>img{
-    
-    object-fit:cover;
-    /* object-position: center; */
-    width:170px;
-    height:90px;
-    
-    
-}
-#check{
-    display: none;
-}
-.checkbtn{
-    font-size: 35px;
-    float: right;
-    margin-right: 30px;
-    line-height: 95px;
-    display: none;
-    cursor: pointer;
-}
-
-nav{
-    position: fixed;
-    background:white;
+.contain{
     width: 100%;
-    height: 90px;
-    z-index: 9;
-
+    min-height: 20px;
+    position: fixed;
+    background-color: black;
+    padding: 80px 0;
+    z-index: 99999;
+   
 }
 
+.logo{
+       padding-top: 20px;
+       position: absolute;
+       width: 50%;
+       top: -60%;
+       left: -10%;
+       bottom: -10%;
+}
+.logo-img{
+             width: 70%;
+            object-fit: contain;
+            object-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+.nav {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    left: 1000px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: black;
+    height:3000px;
+    padding: 30px 0;
+    transform: translateX(0);
+    transition: transform 500ms;
+    
+}
+
+.navigation-open{
+    transform: translatex(-100%);
+}
 nav ul{
-    float: right;
+    position: absolute;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+    left:30%;
+    
+    top:2%;
+}
 
+
+nav li {
+    margin-left: 20px;
+    margin-top: 2rem;
+    align-items: center;
 }
-nav  li{
-    display: inline-block;
-    margin-right: 30px;
-}
-nav  a{
-    padding: 10px 0;
-    color:black;
-    text-transform: uppercase;
-    line-height: 80px;
-    /* border-radius: 50px; */
-    /* transition: .8s; */
+nav a{
     text-decoration: none;
-    font-family:sans-serif;
+    text-align: center;
+    font-size: 3.5rem;
+    text-transform: uppercase;
 }
-
-
-
-nav a:hover,
-nav li a:focus
-{
-    border-bottom: 2px solid darkblue;
-    color: #0d0e10;
+.nav a:hover{
+    color: greenyellow;
+    text-decoration: underline lime;
 }
+.buton-close,
+.buton-open{
+    position: absolute;
+    cursor: pointer;
+    font-weight: 700;
+    background: none;
+    padding: 12px;
+    border: 0;
+}
+.buton-close{
+    font-size: 4em;
+    color: lime;
+    left: 10px;
+}
+.buton-open{
+    
+    left: 95%;
+    top: 20%;
+    font-size: 2em;
+    color: limegreen;
+}
+.drop{
+    position: relative;
+    color:black;
+    cursor: pointer;
+    
+}
+.drop-content{
+    position: absolute;
+    color: #fff;
+    box-shadow: 20px 20px 40px black;
+    left: -60%;
+    display: block;
+    top: 10%;
+    
+}
+.drop-content li{
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+.drop-content a{
+    color: blue;
+    font-size: 3.5rem;
+    text-align: center;
 
+}
+.drop-content a:hover{
+    color:lime;
+}
 
 
 
@@ -184,11 +245,11 @@ nav li a:focus
 
 }
 
-/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<teams>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<teams>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 .myteams{
    padding: 60px 0;
    overflow: hidden;
-   /* background:blanchedalmond; */
+   z-index: 0;
 
 }
 
@@ -215,8 +276,8 @@ nav li a:focus
     position: relative;
     width: 600px;
     transition: .8s ease;
-
-    box-shadow: 0px 10px 10px 0px black;
+     z-index: 0;
+    box-shadow: 10px 20px 20px 20px rgba(0, 0,0,0.3);
     padding:  0;
     border-radius: 50px 25px ;
     margin-left: 20px;
@@ -299,10 +360,8 @@ h5
 
 .container-slider{
      max-width:900px;
-    /* box-shadow: 0px 25px 20px 15px rgba(0, 0, 0, 0.3); */
     margin: 0 auto;
     overflow: hidden;
-    /* border: 2px solid red;  */
     padding: 100px 0;
 }
 .testimonial-bg{
@@ -597,17 +656,9 @@ form{
 .main-footer li a:hover{
     background: none;
     text-decoration:underline;
-    color: red;
+    color:lime;
 }
-.footer-item h1{
-    color: #fff;
-    text-align: center;
-}
-.company  h4{
-    color: #fff;
-    text-align:left;
-    text-transform: uppercase;
-}
+
 
 .copy{
     color: #fff;
@@ -615,58 +666,12 @@ form{
 
 
 
-@media screen and (max-width:950px){
-    
-    
-
-   nav ul {
-        background-color:black;
-       position: fixed;
-       width: 100%;
-       left:-120%;
-       height: 50%;
-      transition:a .8s;
-      top: 70px;
-      display: block;
-      cursor: pointer;
-      }
-.logo img{
-    
-        width:100%; 
-      object-fit: contain;
-      object-position: center;
-      position: absolute;
-        
-    
-}
-
-nav>ul>li{
-    display: block;
-    margin: 20px 0;
-    line-height: 30px;
-    font-size: 35px;
-}
-nav>ul>li>a{color: white;}
-nav>ul>li>a:hover{
-    background: none;
-    color: yellow;
-
-
-
-}
-.checkbtn{
-    display: block;
-    font-size: 60px;
-}
-#check:checked~ul{
-    left:0;
-}
-
-}
-@media (max-width:600px){
+@media (max-width:700px){
     body{
         font-size: 2em;
     }
+            /* navigation=== */
+            /* about */
         .about .about-company{
             width: 940px;
             margin: 0;
@@ -888,3 +893,74 @@ nav>ul>li>a:hover{
         }
         
 }
+@media (min-width:675px){
+    .contain{
+        padding: 10px 0;
+        height: 100px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .buton-close,
+    .buton-open{
+        display: none;
+    }
+    .nav{
+        position: initial;
+        background: none;
+        height: 100%;
+        padding: 0;
+    }
+    nav ul{
+        flex-direction: row;
+        position: initial;
+        justify-content: center;
+    }
+    nav a{
+        color: white;
+        font-size: 1.5rem;
+    }
+    .logo{
+        top:-150%;
+        width: 30%;
+        left: 2%;
+    }
+    .logo-img{
+        width: 80%;
+        
+    }
+    .drop{
+        position: relative;
+        
+        cursor: pointer;
+    }
+    
+    .drop-content{
+        background: limegreen;
+        width: 700px;
+        left: -400%;
+        position: absolute;
+        display: none;
+        top: 90%;
+    }
+    .drop-content li {
+        margin-left: 1rem;
+        
+        
+    }
+    .drop-content a{
+        font-size: 1.2rem;
+        color: black;
+        
+    }
+    .drop-content a:hover{
+        opacity: 0.3;
+        color: white;
+    }
+    
+    .drop:hover .drop-content{
+        display: flex;
+        justify-content: flex-start;
+        
+    }
+    
+    }
